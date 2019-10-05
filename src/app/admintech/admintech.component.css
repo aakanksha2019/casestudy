@@ -1,0 +1,19 @@
+h2{text-align:center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-top:20px;}
+    .table{width:35%;
+        margin:auto;
+        }
+    th, td {
+        
+      border-bottom: 1px solid #ddd;
+    }
+    .bg{
+      background-image: url("../../assets/images/pencil.jpg");
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+    .b1{
+        margin-left: 80%;
+    }

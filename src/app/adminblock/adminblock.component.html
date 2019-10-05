@@ -1,0 +1,27 @@
+<div class="bg">
+<h2 style="padding-top:20px">Welcome Admin</h2>
+<table class="table table-striped " style="background-color: rgb(240, 240, 219)">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">User</th>
+      <th scope="col">Email</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Phno</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user1 of user">
+      <th scope="row">{{user1.id}}</th>
+      <td>{{user1.email}}</td>
+      <td><a href="" data-toggle="popover"  data-trigger="hover"  data-placement="top" title="" 
+        data-content="send an email">ranjith@gmail.com</a></td>
+      <td>{{user1.role}}</td>
+      <td>{{user1.phone}}</td>
+      <button *ngIf="user1.active" type="button" class="btn btn-success " (click)="blocked(user1.id)">Block</button>
+      <button *ngIf="!user1.active" type="button" class="btn btn-danger " (click)="unblocked(user1.id)">UnBlock</button>
+     
+  </tbody>
+</table>
+</div>

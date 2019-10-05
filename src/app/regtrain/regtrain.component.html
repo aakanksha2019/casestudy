@@ -1,0 +1,88 @@
+
+
+  <form name="mentor" [formGroup]="mentorReg" (ngSubmit)="submit()" >
+<h2>Sign up</h2>
+<div class="form-group">
+    <label for="name1">First Name</label>
+    <input type="text" class="form-control"  formControlName="firstname" id="name1" 
+    placeholder="Enter first name" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"/>
+     <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+      <div *ngIf="f.firstname.errors.required">First Name is required</div>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="name1">Last Name</label>
+    <input type="text" class="form-control" id="name2" formControlName="lastname" 
+    placeholder="Enter last name" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"/>
+    <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+      <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="timezone">Timezone</label>
+    <input type="text" class="form-control" formControlName="timez" id="timezone" 
+    placeholder="working timings"/>
+  </div>
+  <div><label for="technologies">Technologies</label></div>
+  <mat-form-field  [ngClass]="{ 'is-invalid': submitted && f.tech.errors }">
+  
+        <!-- <mat-label>Toppings</mat-label> -->
+        <mat-select formControlName="tech" multiple>
+          <mat-option *ngFor="let tech of toppingList" [value]="tech">{{tech}}</mat-option>
+        
+      </mat-select>
+      
+      </mat-form-field>
+      <div *ngIf="submitted && f.tech.errors" class="invalid-feedback">
+          <div *ngIf="f.tech.errors.required">Technologies are required</div>
+      </div>
+      <div><label for="facilities">Facilities</label></div>
+  <mat-form-field  [ngClass]="{ 'is-invalid': submitted && f.facilities.errors }">
+  
+        <!-- <mat-label>Toppings</mat-label> -->
+        <mat-select formControlName="facilities" multiple>
+          <mat-option *ngFor="let topping1 of toppingList1" [value]="topping1">{{topping1}}</mat-option>
+          
+        </mat-select>
+        
+      </mat-form-field>
+      <div *ngIf="submitted && f.facilities.errors" class="invalid-feedback">
+          <div *ngIf="f.facilities.errors.required">Facilities are required</div>
+      </div>
+  
+<div class="form-group">
+    <label for="expyears">Experience</label>
+    <input type="number" class="form-control" formControlName="experience" id="expyears" 
+    placeholder="years" [ngClass]="{ 'is-invalid': submitted && f.experience.errors }"/>
+    <div *ngIf="submitted && f.experience.errors" class="invalid-feedback">
+     <div *ngIf="f.experience.errors.required">Experience is required</div>
+ </div>
+  </div>
+  <div class="form-group">
+    <label for="email1">Phone No</label>
+      <input type="number" class="form-control" formControlName="phone" id="phone" 
+      placeholder="enter phone no" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"/>
+      <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+       <div *ngIf="f.phone.errors.required">Email is required</div>
+   </div>
+    </div>
+  <div class="form-group">
+  <label for="email1">Email</label>
+    <input type="email" class="form-control" formControlName="email" id="email" 
+    placeholder="enter email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+     <div *ngIf="f.email.errors.required">Email is required</div>
+ </div>
+  </div>
+    <div class="form-group">
+        <label for="password1">Password</label>
+        <input type="password" class="form-control" formControlName="password" id="password" 
+        placeholder="enter password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+         <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+          </div>
+          
+ <button type="submit" class="btn btn-primary" >Submit</button> 
+</form>
+

@@ -1,0 +1,21 @@
+h2{text-align:center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-top:20px;}
+    .table{width:50%;
+      margin:auto;
+      background-color: rgb(240, 240, 219);
+      }
+    th, td {
+      
+      border-bottom: 1px solid #ddd;
+    }
+    .fa-star{
+        color:orange
+    }
+    .bg{
+  background-image: url("../../assets/images/pencil.jpg");
+    height:100%;
+    width:100%;
+    position: absolute;
+
+    }

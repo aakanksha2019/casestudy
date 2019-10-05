@@ -1,0 +1,96 @@
+<html>
+<head>
+<meta charset="UTF-8"> 
+  <title>Hello World</title> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head> 
+<body> 
+    
+    <div class="bg">
+	<form name="register" [formGroup]="registerForm" (ngSubmit)="submit()" >
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+		<input class="form-control" formControlName="firstname" placeholder="First Name" 
+		type="text" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"/>
+		<div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+		 <div *ngIf="f.firstname.errors.required">Full Name is required</div>
+		 
+	 </div>
+	</div> <!-- form-group// -->
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+		<input class="form-control" formControlName="lastname" placeholder="Last name" 
+		type="text" [ngClass]="{ 'is-invalid': submitted && f.name.errors }"/>
+		<div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+		 <div *ngIf="f.name.errors.required">Full Name is required</div>
+		 
+	 </div>
+    </div> 
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		 </div>
+		<input class="form-control" formControlName="email" placeholder="Email address" 
+		type="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+		<div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+		 <div *ngIf="f.email.errors.required">Email is required</div>
+		 <div *ngIf="f.email.errors.email">Enter proper email</div>
+	 </div>
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+		</div>
+		<select class="custom-select" style="max-width: 100px;">
+		    <option selected="">+91</option>
+		    <option value="1">+72</option>
+		    <option value="2">+19</option>
+		    <option value="3">+50</option>
+		</select>
+		<input class="form-control" formControlName="phone" placeholder="Phone number" 
+		type="number" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"/>
+		<div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+		 <div *ngIf="f.phone.errors.required">Phone No is required</div>
+		 <div *ngIf="f.phone.errors.maxlength">Enter correct phone no</div>
+	 </div>
+    </div> <!-- form-group// -->
+    <!-- form-group end.// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+		<input class="form-control" formControlName="password" placeholder="Create password" 
+		type="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+		<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+		 <div *ngIf="f.password.errors.required">password is required</div>
+	 </div>
+    </div> <!-- form-group// -->
+    <!-- <div class="form-group input-group"> 
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+		<input class="form-control" formControlName="password1" placeholder="Confirm password" 
+		type="password" [ngClass]="{ 'is-invalid': submitted && f.password1.errors }"/>
+		<div *ngIf="submitted && f.password1.errors " class="invalid-feedback">
+				<div *ngIf="f.password1.errors.required">password is required</div>
+		
+	 </div><div *ngIf="!isSame" class="invalid-feedback">
+	 <div *ngIf="!isSame">password does not match</div></div>
+    </div>  form-group// -->                                      
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary " > Create Account  </button>
+    </div> <!-- form-group// -->      
+	<p class="text-center">Have an account? <a routerLink="/login">Log In</a> </p>
+	<p class="text-center">Register as a <a routerLink="/regtrain">Trainee</a> </p>                                                               
+</form>
+</div>
+</body>
+</html>

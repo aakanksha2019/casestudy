@@ -1,0 +1,27 @@
+<div class="bg">
+    <h2 style="padding-top:20px">Trainers</h2>
+    <table class="table table-striped " style="background-color: rgb(240, 240, 219)">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Mentor</th>
+          <th scope="col">Skill</th>
+          <th scope="col">AvgRating</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">End Date</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user1 of trainings">
+          <th scope="row">{{user1.id}}</th>
+          <td>{{user1.mentorname}}</td>
+          <td>{{user1.skillname}}</td>
+          <td>{{user1.avgrating}}</td>
+          <td>{{user1.startdate}}</td>
+          <td>{{user1.enddate}}</td>
+          <button type="button" class="btn btn-success ">Propose</button>
+         
+      </tbody>
+    </table>
+    </div>

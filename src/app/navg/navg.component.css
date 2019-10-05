@@ -1,0 +1,35 @@
+/*.bg{background-image: url("../../assets/images/thoughts.jpg");
+  height:100%;
+  width: 100%;
+  margin-top: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}*/
+li a {
+  display: block;
+  color:white;
+  
+}
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+.headings{
+    float:right;
+    position:absolute; 
+    top:20%;left:30%;
+    
+}
+.carousel-inner{
+  height: 700px;
+}
+.to{
+  color: white
+}
+.time-picker-wrapper {
+  padding: 1rem;
+}

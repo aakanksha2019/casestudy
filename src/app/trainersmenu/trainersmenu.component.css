@@ -1,0 +1,17 @@
+#navbarNav1{position: absolute;
+    left:85%;
+    font-family: Georgia, 'Times New Roman', Times, serif}
+.div{
+            font-size:20px;
+            font-family: Georgia, 'Times New Roman', Times, serif}
+/* Change the link color on hover */
+li a:hover {
+background-color: #555;
+color: white;
+}
+.active{background-color:rgb(32, 172, 78)}
+.nav2{font-size: 20px;
+  margin-left:50px;
+  font-family: Georgia, 'Times New Roman', Times, serif}
+
+ 
