@@ -1,36 +1,26 @@
-    <div class=bg>
-    <h2>Welcome</h2>
-    <table class="table table-striped ">
+<div class="bg">
+    
+    <table class="table table-striped " style="background-color: rgb(240, 240, 219)">
       <thead>
         <tr>
-          <th scope="col">S.No</th>
-          <th scope="col">Name</th>
-          <th scope="col">Skill</th>
-          <th scope="col">Status</th>
+          <th scope="col">User</th>
+          <th scope="col">skillname</th>
+          <th scope="col">status</th>
+          <th scope="col">mentorname</th>
+          <th scope="col">progress</th>
+          
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Ranjith</td>
-          <td>C</td>
-          <td>Completed</td>
-          
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Sujatha</td>
-            <td>Java</td>
-          <td>Completed</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Harsh</td>
-            <td>C#</td>
-            <td>Completed</td>
-          
-        </tr>
+        <tr *ngFor="let t of training">
+          <th scope="row">{{t.username}}</th>
+          <td>{{t.skillname}}</td>
+          <td>{{t.status}}</td>
+          <td>{{t.mentorname}}</td>
+          <td>{{t.progress}}</td>
+          <!-- <button *ngIf="user1.active" type="button" class="btn btn-success " (click)="blocked(user1.id)">Block</button> 
+          <button *ngIf="!user1.active" type="button" class="btn btn-danger " (click)="unblocked(user1.id)">UnBlock</button>-->
+         
       </tbody>
     </table>
     </div>
-  

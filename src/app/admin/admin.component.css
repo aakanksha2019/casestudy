@@ -1,18 +1,23 @@
-h2{text-align:center;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    margin-top:20px;}
-    .table{width:40%;
-        margin:auto;
-        }
-    .bg{
-      background-image: url("../../assets/images/pencil.jpg");
-      height: 100%;
-      width: 100%;
-      position: absolute;
-    }
-    .btn{
-        margin-left:20%;
-    }
-    .b1{
-        margin-top:100px;
-    }
+li a {
+    display: block;
+    color:white;
+    
+  }
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #555;
+    color: white;
+  }
+  
+  .active{background-color:rgb(32, 172, 78)}
+  
+  .headings{
+      float:right;
+      position:absolute; 
+      top:20%;left:30%;
+      
+  }
+  h2{
+    margin-top:30px;
+    text-align: center
+  }

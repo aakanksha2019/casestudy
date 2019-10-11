@@ -18,7 +18,7 @@
       <div *ngIf="f.lastname.errors.required">Last Name is required</div>
   </div>
   </div>
-  <div class="form-group">
+   <!-- <div class="form-group">  
     <label for="timezone">Timezone</label>
     <input type="text" class="form-control" formControlName="timez" id="timezone" 
     placeholder="working timings"/>
@@ -26,7 +26,7 @@
   <div><label for="technologies">Technologies</label></div>
   <mat-form-field  [ngClass]="{ 'is-invalid': submitted && f.tech.errors }">
   
-        <!-- <mat-label>Toppings</mat-label> -->
+         <mat-label>Toppings</mat-label> 
         <mat-select formControlName="tech" multiple>
           <mat-option *ngFor="let tech of toppingList" [value]="tech">{{tech}}</mat-option>
         
@@ -39,7 +39,7 @@
       <div><label for="facilities">Facilities</label></div>
   <mat-form-field  [ngClass]="{ 'is-invalid': submitted && f.facilities.errors }">
   
-        <!-- <mat-label>Toppings</mat-label> -->
+         <mat-label>Toppings</mat-label>
         <mat-select formControlName="facilities" multiple>
           <mat-option *ngFor="let topping1 of toppingList1" [value]="topping1">{{topping1}}</mat-option>
           
@@ -48,7 +48,7 @@
       </mat-form-field>
       <div *ngIf="submitted && f.facilities.errors" class="invalid-feedback">
           <div *ngIf="f.facilities.errors.required">Facilities are required</div>
-      </div>
+      </div>-->
   
 <div class="form-group">
     <label for="expyears">Experience</label>
@@ -68,10 +68,10 @@
     </div>
   <div class="form-group">
   <label for="email1">Email</label>
-    <input type="email" class="form-control" formControlName="email" id="email" 
-    placeholder="enter email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
-    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-     <div *ngIf="f.email.errors.required">Email is required</div>
+    <input type="email" class="form-control" formControlName="username" id="email" 
+    placeholder="enter email" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
+    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+     <div *ngIf="f.username.errors.required">Email is required</div>
  </div>
   </div>
     <div class="form-group">

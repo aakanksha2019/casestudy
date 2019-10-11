@@ -18,8 +18,8 @@
 		 </div>
 		<input class="form-control" formControlName="firstname" placeholder="First Name" 
 		type="text" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"/>
-		<div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
-		 <div *ngIf="f.firstname.errors.required">Full Name is required</div>
+		<div *ngIf= "f.firstname.errors" class="invalid-feedback">
+		 <div *ngIf="f.firstname.errors.required">First Name is required</div>
 		 
 	 </div>
 	</div> <!-- form-group// -->
@@ -28,9 +28,9 @@
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
 		<input class="form-control" formControlName="lastname" placeholder="Last name" 
-		type="text" [ngClass]="{ 'is-invalid': submitted && f.name.errors }"/>
-		<div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-		 <div *ngIf="f.name.errors.required">Full Name is required</div>
+		type="text" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"/>
+		<div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+		 <div *ngIf="f.lastname.errors.required">Last Name is required</div>
 		 
 	 </div>
     </div> 
@@ -38,11 +38,11 @@
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
-		<input class="form-control" formControlName="email" placeholder="Email address" 
-		type="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
-		<div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-		 <div *ngIf="f.email.errors.required">Email is required</div>
-		 <div *ngIf="f.email.errors.email">Enter proper email</div>
+		<input class="form-control" formControlName="username" placeholder="Email address" 
+		type="email" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
+		<div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+		 <div *ngIf="f.username.errors.required">Email is required</div>
+		 <!-- <div *ngIf="f.username.errors.email">Enter proper email</div> -->
 	 </div>
     </div> <!-- form-group// -->
     <div class="form-group input-group">

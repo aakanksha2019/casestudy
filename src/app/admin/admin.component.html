@@ -1,7 +1,37 @@
-<div class="bg">
-<h2>Welcome Admin</h2>
-<div class=b1>
-<button type="button" class="btn btn-primary " (click)="technologies()">View Technologies</button>
-<br><br>
-<button type="button" class="btn btn-primary "(click)="listusers()">Users</button>
-</div></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-Item" active>
+              <a class="nav-link" (click)="technologies()">View Technologies<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item"> 
+                <a class="nav-link" (click)="listusers()">Users</a> 
+              </li> 
+             
+              <li class="nav-Item" >
+                    <a class="nav-link" routerLink="/users" style="position: absolute;left:80%" >Notifications<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item" active> 
+                      <a class="nav-link" style="position: absolute;left:90%"(click)="logout()">Logout</a>
+                    </li> 
+            </ul> 
+          </div> <!-- // added new (copy it from:- https://getbootstrap.com/docs/4.3/components/navbar/)--> 
+        <!-- </nav>  -->
+            <!-- <form class="form-inline" [formGroup]="searchsub" (ngSubmit)="submit()">  
+              <div class=form-group>
+           <input class="form-control mr-sm-2" type="search" placeholder="Search" formControlName="name" aria-label="Search" > 
+            <input type="time" atp-time-picker value="20:55"  formControlName="start"/> 
+            <input type="time" atp-time-picker value="20:55"  formControlName="end"/>
+            </div> 
+            <div class="form-group">
+           <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search</button> 
+              </div>
+       </form>-->
+    </nav>
+    <h2>Welcome Admin</h2>

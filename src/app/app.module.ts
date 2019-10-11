@@ -29,6 +29,9 @@ import { AdmintechComponent } from './admintech/admintech.component';
 import { AmazingTimePickerModule } from 'amazing-time-picker'; 
 import { IgxTimePickerModule } from "igniteui-angular";
 import { AdminComponent } from './admin/admin.component';
+import { SearchtrainingsComponent } from './searchtrainings/searchtrainings.component';
+import { TrainerprogressComponent } from './trainerprogress/trainerprogress.component';
+import { TrainercompletedComponent } from './trainercompleted/trainercompleted.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { AdminComponent } from './admin/admin.component';
     AdminblockComponent,
     AdmintechComponent,
     AdminComponent,
+    SearchtrainingsComponent,
+    TrainerprogressComponent,
+    TrainercompletedComponent,
     
     
   ],
@@ -65,8 +71,8 @@ import { AdminComponent } from './admin/admin.component';
   providers: [ AuthguardService,
     AlertService,
     AuthService,
-    UserService, //{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-  // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    UserService,{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+   { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
   // provider used to create fake backend
   // fakeBackendProvider

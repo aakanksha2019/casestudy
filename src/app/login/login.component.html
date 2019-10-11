@@ -17,9 +17,9 @@
               <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
            </div>
               <input  class="form-control" placeholder="Email address" type="email"  
-              formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
-              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-              <div *ngIf="f.email.errors.required">Email is required</div>
+              formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
+              <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="f.username.errors.required">Email is required</div>
               <!-- <div *ngIf="f.username.errors.email">Email is incorrect</div> -->
           </div>
             </div>

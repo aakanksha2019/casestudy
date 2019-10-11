@@ -16,6 +16,10 @@ import {AdminComponent} from './admin/admin.component';
 import {AdminblockComponent} from './adminblock/adminblock.component';
 import {AdmintechComponent} from './admintech/admintech.component';
 import { TrainersmenuComponent } from './trainersmenu/trainersmenu.component';
+import { AuthService } from './sevices/auth.service';
+import { SearchtrainingsComponent } from './searchtrainings/searchtrainings.component';
+import { TrainerprogressComponent } from './trainerprogress/trainerprogress.component';
+import { TrainercompletedComponent } from './trainercompleted/trainercompleted.component';
 const routes: Routes = [
   {path:'',component:NavgComponent},
   {path:'',redirectTo:'usersmenu',pathMatch:'full'},
@@ -29,12 +33,14 @@ const routes: Routes = [
   {path:'userprogress',component:UserprogressComponent},
   {path:'usercompleted',component:UsercompletedComponent},
   {path:'profile',component:TrainerprofileComponent},
-  {path:'admin',component:AdminComponent},
+  {path:'admin',component:AdminComponent,canActivate:[AuthguardService]},
  {path:'adminblock',component:AdminblockComponent},
  {path:'admintech',component:AdmintechComponent},
- {path:'trainermenu',component:TrainersmenuComponent},
+ {path:'trainersmenu',component:TrainersmenuComponent,canActivate:[AuthguardService]},
  {path:'currenttrain',component:CurrenttrainComponent},
- 
+ {path:'searchtrainings',component:SearchtrainingsComponent},
+ {path:'trainercurrent',component:TrainerprogressComponent},
+ {path:'trainercompleted',component:TrainercompletedComponent},
  
 ];
 

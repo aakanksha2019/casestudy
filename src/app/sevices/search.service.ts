@@ -13,7 +13,7 @@ export class SearchService {
   private end:string;
   private urlname:string;
   constructor(private http: HttpClient) {
-    this.urlname="http://localhost:8090/posttrainings";
+    this.urlname="http://localhost:8090/search";
    }
  public search():Observable<Trainings[]> {
     

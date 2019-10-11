@@ -20,13 +20,15 @@ export class LoginComponent implements OnInit {
               private route: ActivatedRoute,
               private authService: AuthService)
                 { }
-
+currentUser: any = [];
   ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('username'));
     this.loginForm=this.formbuilder.group({
-      email:['',Validators.required],
+      username:['',Validators.required],
       password:['',Validators.required],      
     });
-    this.authService.logout();
+
+    // this.authService.logout();
 
 
     // get return url from route parameters or default to '/'
@@ -42,11 +44,22 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authService.login(this.f.email.value, this.f.password.value)
+    this.authService.login(this.f.username.value, this.f.password.value)
         .pipe(first())
         .subscribe(
             data => {
+              let currentUser = JSON.parse(localStorage.getItem('username'));
+              let role = currentUser.role;
+              console.log(this.currentUser)
+             if(role == "user"){
                 this.router.navigate(['/usersmenu']);
+             }
+                else if(currentUser.role == "mentor"){
+                this.router.navigate(['/trainersmenu']);
+                }
+                else if(currentUser.role == "admin")
+                this.router.navigate(['/admin']);
+                
             },
             error => {
                 this.error = error;

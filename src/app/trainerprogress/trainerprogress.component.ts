@@ -3,22 +3,19 @@ import { Trainings } from '../model/trainings';
 import { TrainingsService } from '../sevices/trainings.service';
 
 @Component({
-  selector: 'app-userprogress',
-  templateUrl: './userprogress.component.html',
-  styleUrls: ['./userprogress.component.css']
+  selector: 'app-trainerprogress',
+  templateUrl: './trainerprogress.component.html',
+  styleUrls: ['./trainerprogress.component.css']
 })
-export class UserprogressComponent implements OnInit {
-  training:Trainings[];
-  constructor( private trainings:TrainingsService) { }
+export class TrainerprogressComponent implements OnInit {
+training:Trainings[];
+  constructor(private trainings:TrainingsService) { }
   currentUser = JSON.parse(localStorage.getItem('username'));
   userid=this.currentUser.id;
   ngOnInit() {
-
-  this.current();
-  
+    this.current();
   }
   current(){
     this.trainings.current(this.userid).subscribe(data=>{this.training=data;});
   }
-  
 }

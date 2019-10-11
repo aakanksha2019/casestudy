@@ -5,6 +5,7 @@ import { first } from 'rxjs/operators';
 import { UserService } from '../sevices/user.service';
 import { AlertService } from '../sevices/alert.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { AuthService } from '../sevices/auth.service';
 @Component({
   selector: 'app-regtrain',
   templateUrl: './regtrain.component.html',
@@ -15,11 +16,12 @@ export class RegtrainComponent implements OnInit {
   loading = false;
   submitted = false;
     isSame=true;
+  error: '';
   constructor(
       private formBuilder: FormBuilder,
       private router: Router,
-      private userService: UserService,
-      private alertService: AlertService) { }
+      private alertService: AlertService,
+      private authService: AuthService) { }
   
 
   ngOnInit() {
@@ -28,10 +30,10 @@ export class RegtrainComponent implements OnInit {
   this.mentorReg = this.formBuilder.group({
     firstname: ['', Validators.required],
     lastname: ['', Validators.required],
-    timez:['', Validators.required],
-    email: ['', [Validators.required,Validators.email]],
-    tech:['',Validators.required],
-    facilities:['',Validators.required],
+    //  timez:['', Validators.required],
+    username: ['', [Validators.required,Validators.email]],
+    //  tech:['',Validators.required],
+    //  facilities:['',Validators.required],
     experience: ['', Validators.required],
     phone: ['', [Validators.required,Validators.maxLength(10)]],
     password: ['', [Validators.required, Validators.minLength(6)]],
@@ -62,7 +64,7 @@ if (this.mentorReg.invalid) {
 }
 
 this.loading = true;
-this.userService.register(this.mentorReg.value)
+this.authService.register(this.mentorReg.value)
     .pipe(first())
     .subscribe(
         data => {
@@ -71,6 +73,7 @@ this.userService.register(this.mentorReg.value)
         },
         error => {
             this.alertService.error(error);
+            this.error = error;
             this.loading = false;
         });
 }
